@@ -1,34 +1,55 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<img src='https://ik.imagekit.io/b5di91ako/rickyandmorty.png?updatedAt=1680559146876' alt='banner'/>
 
-## Getting Started
+<br>
+<br>
 
-First, run the development server:
+### Tópicos
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+- [Descrição do Projeto:](#descrição-do-projeto)
+- [Funcionalidades:](#funcionalidades)
+- [Acesso ao Projeto:](#acesso-ao-projeto)
+- [Tecnologias utilizadas:](#tecnologias-utilizadas)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+# RD95 Logistic
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Descrição do Projeto:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+**Um site que oferece serviços logísticos. Com CRUD completo de 4 entidades.**
 
-## Learn More
+### Funcionalidades:
 
-To learn more about Next.js, take a look at the following resources:
+- CRUD completo de 4 entidads (veículos, clientes, condutores e deslocamentos);
+- No momento não implementei autenticação mas, há um botão para ativar e desativar o modo usuário;
+- Tabela para apresentação das entidades, com filtro e função de copiar dados;
+- Uso da feature "server actions" do Next13, permitindo a "atualização" da página quando alguma ação é feita no banco de dados.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Páginas:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- Para cada entidade (clientes, por exemplo) há uma página mostrando uma tabela com todos cadastrados, incluindo paginação e filtro.
+- Para cada documento (cada cliente, por exemplo) há uma página com todas suas informações e opções para editar e excluir.
 
-## Deploy on Vercel
+### Acesso ao Projeto:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+[🔗 RD95 Logistic](https://rd95-rick-morty-api.vercel.app/)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### Como executar
+
+- Clone o projeto: `git clone https://github.com/RafaDev95/rickyAndMortyApi-nextjs-layout.git`
+
+- Após clonado `yarn` ou `npm install` para baixar as dependências necessárias;
+- E por fim, use o comando `yarn dev` para iniciar o projeto.
+
+### Tecnologias utilizadas:
+
+- [NextJS](https://nextjs.org/)
+- [Material Ui](https://mui.com/)
+- [Zustand](https://zustand-demo.pmnd.rs/)
+- [React Hot Toast](https://react-hot-toast.com/)
+- [MUI Icons](https://mui.com/material-ui/material-icons/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [ReactHookForm](https://react-hook-form.com/)
+- [Zod](https://zod.dev/)
+
+### Considerações
+
+- Poderia usar Axios ou qualquer outra ferramenta fazer requisições, mas como o Next13 deixou super fácil e intuitivo de administrar o cache usando o fetch api, dei preferência.
