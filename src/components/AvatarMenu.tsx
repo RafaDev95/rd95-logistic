@@ -129,7 +129,7 @@ const AvatarMenu = () => {
         <MenuItem onClick={() => redirectUserAndOpenModal('clients', 'client')}>
           <PersonAdd sx={{ mr: 1, color: theme.colors.darkGray }} /> Cadastrar Cliente
         </MenuItem>
-        <MenuItem onClick={() => redirectUserAndOpenModal('conductores', 'conductor')}>
+        <MenuItem onClick={() => redirectUserAndOpenModal('conductors', 'conductor')}>
           <AirlineSeatReclineNormalIcon sx={{ mr: 1, color: theme.colors.darkGray }} />
           Cadastrar Condutor
         </MenuItem>

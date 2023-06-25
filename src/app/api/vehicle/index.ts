@@ -1,4 +1,5 @@
 import { Vehicle, VehicleResponse, VehicleSimplifiedToRegister } from '@/types/vehicle'
+import { baseUrl } from '../baseUrl'
 
 export const registerVehicle = async (vehicle: VehicleSimplifiedToRegister): Promise<boolean> => {
   const { anoFabricacao, kmAtual, ...restData } = vehicle
@@ -9,7 +10,7 @@ export const registerVehicle = async (vehicle: VehicleSimplifiedToRegister): Pro
     ...restData,
   }
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/Veiculo`, {
+    const res = await fetch(`${baseUrl}/Veiculo`, {
       method: 'POST',
       body: JSON.stringify(parsedVehicleData),
       headers: {
@@ -30,7 +31,7 @@ export const registerVehicle = async (vehicle: VehicleSimplifiedToRegister): Pro
 
 export const getVehiclesData = async (): Promise<VehicleResponse[]> => {
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/Veiculo`, {
+    const res = await fetch(`${baseUrl}/Veiculo`, {
       cache: 'no-store',
       method: 'GET',
     })
@@ -48,7 +49,7 @@ export const getVehiclesData = async (): Promise<VehicleResponse[]> => {
 
 export const getVehicleById = async (id: number): Promise<VehicleResponse> => {
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/Veiculo/${id}`, {
+    const res = await fetch(`${baseUrl}/Veiculo/${id}`, {
       cache: 'no-store',
       method: 'GET',
     })
@@ -66,7 +67,7 @@ export const getVehicleById = async (id: number): Promise<VehicleResponse> => {
 
 export const deleteVehicle = async (id: number): Promise<boolean> => {
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/Veiculo/${id}`, {
+    const res = await fetch(`${baseUrl}/Veiculo/${id}`, {
       method: 'DELETE',
       body: JSON.stringify({ id }),
       headers: {
@@ -99,7 +100,7 @@ export const updateVehicle = async (
   }
 
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/Veiculo/${id}`, {
+    const res = await fetch(`${baseUrl}/Veiculo/${id}`, {
       method: 'PUT',
       body: JSON.stringify(parsedVehicleData),
       headers: {

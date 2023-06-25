@@ -1,8 +1,10 @@
 import { Client, ClientResponse } from '@/types/client'
 
+import { baseUrl } from '../baseUrl'
+
 export const registerClient = async (client: Client): Promise<boolean> => {
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/Cliente`, {
+    const res = await fetch(`${baseUrl}/Cliente`, {
       method: 'POST',
       body: JSON.stringify(client),
       headers: {
@@ -23,7 +25,7 @@ export const registerClient = async (client: Client): Promise<boolean> => {
 
 export const getClients = async (): Promise<ClientResponse[]> => {
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/Cliente`, {
+    const res = await fetch(`${baseUrl}/Cliente`, {
       cache: 'no-store',
       method: 'GET',
     })
@@ -41,7 +43,7 @@ export const getClients = async (): Promise<ClientResponse[]> => {
 
 export const getClientById = async (id: number): Promise<ClientResponse> => {
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/Cliente/${id}`, {
+    const res = await fetch(`${baseUrl}/Cliente/${id}`, {
       method: 'GET',
     })
 
@@ -58,7 +60,7 @@ export const getClientById = async (id: number): Promise<ClientResponse> => {
 
 export const deleteClient = async (id: number): Promise<boolean> => {
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/Cliente/${id}`, {
+    const res = await fetch(`${baseUrl}/Cliente/${id}`, {
       method: 'DELETE',
       body: JSON.stringify({ id }),
       headers: {
@@ -79,7 +81,7 @@ export const deleteClient = async (id: number): Promise<boolean> => {
 
 export const updateClient = async (client: Client, id: number): Promise<boolean> => {
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/Cliente/${id}`, {
+    const res = await fetch(`${baseUrl}/Cliente/${id}`, {
       method: 'PUT',
       body: JSON.stringify({ ...client, id }),
       headers: {

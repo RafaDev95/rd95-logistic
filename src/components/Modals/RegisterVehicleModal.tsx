@@ -68,6 +68,8 @@ const RegisterVehicleModal = ({ onRegister, onUpdate }: Props) => {
     if (isUpdate) {
       deactivateUpdateState()
       onClose()
+    } else {
+      onClose()
     }
   }
 

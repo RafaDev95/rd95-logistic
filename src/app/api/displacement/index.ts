@@ -5,6 +5,8 @@ import {
   DisplacementResponse,
 } from '@/types/displacement'
 
+import { baseUrl } from '../baseUrl'
+
 export const registerDisplacement = async (
   displacement: DisplacementSimplifiedToRegister
 ): Promise<boolean> => {
@@ -21,16 +23,13 @@ export const registerDisplacement = async (
   console.log(parsedDisplacementData)
 
   try {
-    const res = await fetch(
-      `${process.env.NEXT_PUBLIC_BASE_URL}/Deslocamento/IniciarDeslocamento`,
-      {
-        method: 'POST',
-        body: JSON.stringify(parsedDisplacementData),
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      }
-    )
+    const res = await fetch(`${baseUrl}/Deslocamento/IniciarDeslocamento`, {
+      method: 'POST',
+      body: JSON.stringify(parsedDisplacementData),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
 
     if (!res.ok) {
       throw new Error(`Status ${res.status} ${res.statusText}`)
@@ -45,7 +44,7 @@ export const registerDisplacement = async (
 
 export const getDisplacements = async (): Promise<DisplacementResponse[]> => {
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/Deslocamento`, {
+    const res = await fetch(`${baseUrl}/Deslocamento`, {
       cache: 'no-store',
       method: 'GET',
     })
@@ -63,7 +62,7 @@ export const getDisplacements = async (): Promise<DisplacementResponse[]> => {
 
 export const getDisplacementById = async (id: number): Promise<DisplacementResponse> => {
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/Deslocamento/${id}`, {
+    const res = await fetch(`${baseUrl}/Deslocamento/${id}`, {
       cache: 'no-store',
       method: 'GET',
     })
@@ -81,7 +80,7 @@ export const getDisplacementById = async (id: number): Promise<DisplacementRespo
 
 export const deleteDisplacement = async (id: number): Promise<boolean> => {
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/Deslocamento/${id}`, {
+    const res = await fetch(`${baseUrl}/Deslocamento/${id}`, {
       method: 'DELETE',
       body: JSON.stringify({ id }),
       headers: {
@@ -105,16 +104,13 @@ export const updateDisplacement = async (
   id: number
 ): Promise<boolean> => {
   try {
-    const res = await fetch(
-      `${process.env.NEXT_PUBLIC_BASE_URL}/Deslocamento/${id}/EncerrarDeslocamento`,
-      {
-        method: 'PUT',
-        body: JSON.stringify({ ...displacement, id }),
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      }
-    )
+    const res = await fetch(`${baseUrl}/Deslocamento/${id}/EncerrarDeslocamento`, {
+      method: 'PUT',
+      body: JSON.stringify({ ...displacement, id }),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
 
     if (!res.ok) {
       throw new Error(`Status ${res.status} ${res.statusText}`)

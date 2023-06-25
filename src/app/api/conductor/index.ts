@@ -1,8 +1,10 @@
 import { Conductor, ConductorResponse } from '@/types/conductor'
 
+import { baseUrl } from '../baseUrl'
+
 export const registerConductor = async (conductor: Conductor): Promise<boolean> => {
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/Condutor`, {
+    const res = await fetch(`${baseUrl}/Condutor`, {
       method: 'POST',
       body: JSON.stringify(conductor),
       headers: {
@@ -23,7 +25,7 @@ export const registerConductor = async (conductor: Conductor): Promise<boolean> 
 
 export const getConductors = async (): Promise<ConductorResponse[]> => {
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/Condutor`, {
+    const res = await fetch(`${baseUrl}/Condutor`, {
       cache: 'no-store',
       method: 'GET',
     })
@@ -41,7 +43,7 @@ export const getConductors = async (): Promise<ConductorResponse[]> => {
 
 export const getConductorById = async (id: number): Promise<ConductorResponse> => {
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/Condutor/${id}`, {
+    const res = await fetch(`${baseUrl}/Condutor/${id}`, {
       method: 'GET',
     })
 
@@ -58,7 +60,7 @@ export const getConductorById = async (id: number): Promise<ConductorResponse> =
 
 export const deleteConductor = async (id: number): Promise<boolean> => {
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/Condutor/${id}`, {
+    const res = await fetch(`${baseUrl}/Condutor/${id}`, {
       method: 'DELETE',
       body: JSON.stringify({ id }),
       headers: {
@@ -79,7 +81,7 @@ export const deleteConductor = async (id: number): Promise<boolean> => {
 
 export const updateConductor = async (client: Conductor, id: number): Promise<boolean> => {
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/Condutor/${id}`, {
+    const res = await fetch(`${baseUrl}/Condutor/${id}`, {
       method: 'PUT',
       body: JSON.stringify({ ...client, id }),
       headers: {

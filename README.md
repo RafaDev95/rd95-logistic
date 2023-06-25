@@ -1,4 +1,4 @@
-<img src='https://ik.imagekit.io/b5di91ako/rickyandmorty.png?updatedAt=1680559146876' alt='banner'/>
+<img src='https://ik.imagekit.io/b5di91ako/RD95_Delivery.png?updatedAt=1687718214322' alt='banner'/>
 
 <br>
 <br>
@@ -30,11 +30,11 @@
 
 ### Acesso ao Projeto:
 
-[🔗 RD95 Logistic](https://rd95-rick-morty-api.vercel.app/)
+[🔗 RD95 Logistic](https://rd95-logistic.vercel.app/)
 
 ### Como executar
 
-- Clone o projeto: `git clone https://github.com/RafaDev95/rickyAndMortyApi-nextjs-layout.git`
+- Clone o projeto: `git clone https://github.com/RafaDev95/rd95-logistic.git`
 
 - Após clonado `yarn` ou `npm install` para baixar as dependências necessárias;
 - E por fim, use o comando `yarn dev` para iniciar o projeto.
