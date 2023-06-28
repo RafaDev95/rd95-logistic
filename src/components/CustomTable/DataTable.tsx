@@ -99,7 +99,7 @@ const DataTable = <TData, TValue>({ columns, data, searchTerm }: DataTableProps<
                     component='th'
                     scope='row'
                   >
-                    No results.
+                    Sem resultados.
                   </TableCell>
                 </TableRow>
               )}

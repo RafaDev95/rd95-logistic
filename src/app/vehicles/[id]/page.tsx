@@ -1,4 +1,5 @@
 import { getVehicleById } from '@/app/api/vehicle'
+
 import VehicleTemplate from './VehicleTemplate'
 
 const VehiclePage = async ({ params }: { params: { id: number } }) => {

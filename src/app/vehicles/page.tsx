@@ -1,7 +1,5 @@
-import Loader from '@/components/Loader'
 import { RegisterVehicleFormData } from '@/components/Modals/RegisterVehicleModal'
 import { revalidatePath } from 'next/cache'
-import { Suspense } from 'react'
 import { deleteVehicle, getVehiclesData, registerVehicle, updateVehicle } from '../api/vehicle'
 import VehiclesTemplate from './VehiclesTemplate'
 
@@ -36,14 +34,12 @@ const VehiclesPage = async () => {
   const data = await getVehiclesData()
 
   return (
-    <Suspense fallback={<Loader />}>
-      <VehiclesTemplate
-        fetchedData={data}
-        onDelete={onDelete}
-        onRegister={onRegister}
-        onUpdate={onUpdate}
-      />
-    </Suspense>
+    <VehiclesTemplate
+      fetchedData={data}
+      onDelete={onDelete}
+      onRegister={onRegister}
+      onUpdate={onUpdate}
+    />
   )
 }
 export default VehiclesPage
