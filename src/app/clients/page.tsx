@@ -31,7 +31,7 @@ const onUpdate = async (data: Client, id: number): Promise<boolean> => {
   return response
 }
 
-const VehiclesPage = async () => {
+const ClientsPage = async () => {
   const data = await getClients()
 
   return (
@@ -43,4 +43,4 @@ const VehiclesPage = async () => {
     />
   )
 }
-export default VehiclesPage
+export default ClientsPage
