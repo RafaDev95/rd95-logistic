@@ -53,3 +53,5 @@
 ### Considerações
 
 - Poderia usar Axios ou qualquer outra ferramenta fazer requisições, mas como o Next13 deixou super fácil e intuitivo de administrar o cache usando o fetch api, dei preferência.
+- Foi usado a feature "server actions", que ainda está em exprimento, mas é simplesmente incrível a facilidade que ele fornece para atualizar/revalidar determinado server component/fetch quando é feito algum requisição/mutação. 
+Por exemplo, quando um novo usuário, veículo, condutor ou cliente é criado ou deletado, a tabela respectiva atualiza em tempo real, apenas com uma linha adicionada, usando os server actions. Esse foi o motivo de haver um pouco de "prop drilling", pois a função que requisita os dados dessas tabelas precisam ser servers components, ou seja, tem que ser diretamente no arquivo `page.tsx`.
